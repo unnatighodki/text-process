@@ -9,6 +9,12 @@ class Preprocess(PorterStemmer):
     def __init__(self):
         super().__init__()
         print("Preprocess class Initialized")
+    
+    def word_tokenizer(self, text):
+        return text.split(" ")
+    
+    def sentence_tokenizer(self, text):
+        return re.split('(?<=\.|\?)\s', text)
 
     def hashtags(self, text):
         hash_tags = re.findall(r"#(\w+)", text)
@@ -62,6 +68,9 @@ class Preprocess(PorterStemmer):
         pat = r'[^a-zA-z0-9.,!?/:;\"\'\s]'
         return re.sub(pat, '', text)
     
+
+
+    
     def preprocess_document(self, document):
         # Apply preprocessing steps
         document = self.remove_users(document)
@@ -82,3 +91,7 @@ class Preprocess(PorterStemmer):
 if __name__ == "__main__":
     doc_clean = Preprocess()
     doc_clean.preprocess_document('My Name is Lane. You can reach me via abc@gmail.com!') #
+
+    doc_clean.sentence_tokenizer('My Name is Lane. You can reach me via abc@gmail.com!')
+    doc_clean.word_tokenizer('My Name is Lane. You can reach me via abc@gmail.com!')
+
