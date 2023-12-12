@@ -1,9 +1,8 @@
 class PorterStemmer:
 
-    # Added by Unnati
+    # Initializing the class
     def __init__(self, letter = None):
         self.letter = letter
-    
 
     # Checking if the letter is vowel
     def is_vowel(self, letter):
