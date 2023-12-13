@@ -5,6 +5,7 @@ try:
     import PorterStemmer
     import Preprocess
     import NaiveBayes
+    from ModelEval import ModelEvalution
 
     import_error = None
 
