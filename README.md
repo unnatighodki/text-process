@@ -36,7 +36,7 @@ The includes modules needed to perform several steps while doing an NLP project 
   ```
 ### 3. NaiveBayes:
 
-  This class implements Bayes' theorem and is known as "naive," by assuming that the features are conditionally independent, given the label. This simple and baseline algorithm is widely used in text classification. It consists of functions such as train and predict:
+  This class implements Bayes' theorem, known as "naive," by assuming that the features are conditionally independent, given the label. This simple baseline algorithm is widely used in text classification. It consists of functions such as train and predict:
 
   ```
     def __init__(self): # removing preprocess from input
