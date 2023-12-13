@@ -28,8 +28,8 @@ class ModelEvalution:
         return y_new
 
     def conf_mat(self):
-        y_actual_new = x.new_class_labels(self.y_actual)
-        y_pred_new = x.new_class_labels(self.y_pred)
+        y_actual_new = self.new_class_labels(self.y_actual)
+        y_pred_new = self.new_class_labels(self.y_pred)
         
         num_class = len(np.unique(y_actual_new))
         conf_mat = np.zeros((num_class,num_class), dtype=int, order='C')
