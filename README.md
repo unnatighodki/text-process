@@ -49,6 +49,21 @@ The includes modules needed to perform several steps while doing an NLP project 
         self.class_doc_counts = {}
 
   ```
+
+### 4. ModelEvaluation:
+
+  This contains the methods for evaluating model performance by comparing actual and predicted labels using the above prediction functions. Different metrics are used based on the user requirements. They consist of such as confusion matrix, class_precision, class_recall, etc.
+
+  ```
+    def model_accuracy(self,y_actual, y_pred):
+        true_prediction = 0
+        sample_count = len(y_actual)
+        for true,pred in zip(y_actual,y_pred):
+            if true == pred:
+                true_prediction += 1
+        return round(true_prediction/sample_count, 3)
+
+  ```
   
   
   
